@@ -79,3 +79,9 @@
       </li>
   </ul>
 </template>
+
+<style scoped>
+  ul > * {
+    margin: 7px auto;
+  }
+</style>
