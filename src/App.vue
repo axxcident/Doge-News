@@ -1,16 +1,26 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import NavigationBar from './components/NavigationBar.vue'
+import FooterBar from './components/FooterBar.vue'
 </script>
 
 <template>
-  <header>
-    <NavigationBar />
-  </header>
 
-  <RouterView />
+<!-- Header & Navigation -->
+<header>
+  <NavigationBar />
+</header>
+
+<!-- main content per sida -->
+<RouterView />
+
+<!-- Footer Navigation -->
+<FooterBar />
+
 </template>
 
-<style scoped>
-
+<style>
+  main {
+    height: 90vh;
+  }
 </style>

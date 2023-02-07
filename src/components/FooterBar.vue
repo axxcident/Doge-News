@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="wrapper">
+    <div class="footer">
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
         <nav>
           <RouterLink to="/">Home</RouterLink>
@@ -14,18 +14,18 @@
 </template>
 
 <style scoped>
-  .wrapper {
+  .footer {
     display: flex;
     justify-content: center;
     width: 100vw;
     /* max-width: 50%;
     flex: 0 0 50%; */
-    border-bottom: 2px solid rgb(72, 60, 60);
+    border-top: 2px solid rgb(72, 60, 60);
   }
-  .wrapper img {
+  .footer img {
     margin-right: 30px;
   }
-  .wrapper nav {
+  .footer nav {
     display: flex;
     justify-content: space-between;
     width: 20vw;
@@ -33,10 +33,13 @@
     font-size: 2em;
   }
 
-  #app > header > div > nav a {
+  #app > div > nav > a {
     text-decoration: none;
     color: black;
     margin: auto 20px;
   }
+  /* #app > header > div > nav > a {
+
+  } */
 
 </style>
