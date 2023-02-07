@@ -12,6 +12,8 @@ app.use(router)
 const store = createStore({
   state() {
     return {
+      name: "",
+      email: "",
       user: {}
     }
   },
@@ -19,7 +21,13 @@ const store = createStore({
     setUser(state, user) {
       state.user = user;
     }
-  }
+  },
+  updateName(state, name) {
+    state.name = name;
+  },
+  updateEmail(state, email) {
+    state.email = email;
+  },
 })
 
 app.use(store)
