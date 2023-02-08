@@ -1,7 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
-
 <template>
   <main>
     <div class="about">
@@ -10,14 +6,11 @@ import { RouterLink } from 'vue-router'
 
     <form class="wrapper" @submit.prevent="submitForm">
       <label for="namnet">Namn:</label>
-      <!-- $store.state.name -->
       <input :name="name" type="text" v-model="$store.state.name">
       <label for="emalj">Email:</label>
       <input :name="email" type="text" v-model="$store.state.email">
       <!-- routerlänk med knapp -->
       <button type="submit">Aktivera konto</button>
-      <!-- <RouterLink to="/"><button type="submit">Aktivera konto</button></RouterLink> -->
-      <!-- <button onclick="http://localhost:5173" button type="submit">Aktivera konto</button> -->
     </form>
     <p> med $store å allt: {{ this.$store.state.name }} och {{ this.$store.state.email }} </p>
     <br>
@@ -54,12 +47,6 @@ export default {
       }
     }
   },
-  // data() {
-  //   return {
-  //     name: this.$store.state.name,
-  //     email: this.$store.state.email
-  //   }
-  // },
   methods: {
     submitForm() {
       this.$store.commit('setUser', {
@@ -68,10 +55,6 @@ export default {
       })
       this.$store.commit('updateTestet')
       this.$router.push('/')
-      // console.log(this.$store.state.testet)
-      // uppdatera komponent.
-      // this.$forceUpdate() denna gör ingenting
-      // location.reload() denna rensar all data
     }
   }
 }

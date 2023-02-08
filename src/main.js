@@ -16,7 +16,8 @@ const store = createStore({
       email: "",
       user: {},
       // testa ha boolean som ändras när det finns en user.
-      testet: false
+      testet: false,
+      API_KEY: "879394147b4940aa9d8fad9b70a548fb"
     }
   },
   mutations: {
