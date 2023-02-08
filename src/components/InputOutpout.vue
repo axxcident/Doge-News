@@ -1,16 +1,22 @@
+<!-- <script setup>
+import { RouterLink } from 'vue-router'
+</script> -->
+
 <template>
-  <form class="wrapper" @submit.prevent="submitForm">
+  <!-- <form class="wrapper" @submit.prevent="submitForm">
     <label for="namnet">Namn:</label>
-    <!-- $store.state.name -->
-    <input :name="name" type="text" v-model="$store.state.name">
-    <label for="emalj">Email:</label>
-    <input :name="email" type="text" v-model="$store.state.email">
-    <button type="submit">Aktivera konto</button>
+     $store.state.name
+  <input :name="name" type="text" v-model="$store.state.name">
+  <label for="emalj">Email:</label>
+  <input :name="email" type="text" v-model="$store.state.email">
+    routerlänk med knapp
+  <RouterLink to="/"><button type="submit">Aktivera konto</button></RouterLink>
   </form>
   <p> med $store å allt: {{ this.$store.state.name }} och {{ this.$store.state.email }} </p>
   <br>
   <p> med textinterpolering från data(): {{ name }} & {{ email }} </p>
-  <br>
+  <br> -->
+  <p v-if="!testet">Denna syns ifall !testet är true</p>
   <p v-if="testet"> Name:{{ name }} & Email:{{ email }} </p>
   <!-- Tidigare text input kod. -->
   <!-- <div class="wrapper">
@@ -20,7 +26,6 @@
 </template>
 
 <script>
-
 
 export default {
 
@@ -62,8 +67,7 @@ export default {
         email: this.email
       })
       this.$store.commit('updateTestet')
-      // console.log(this.$store.state.testet)
-      console.log(this.testet)
+      console.log(this.$store.state.testet)
       // uppdatera komponent.
       // this.$forceUpdate() denna gör ingenting
       // location.reload() denna rensar all data
