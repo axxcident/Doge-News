@@ -1,42 +1,39 @@
 <script setup>
-  import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-    <div class="wrapper">
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-          <RouterLink to="/todo">Todo</RouterLink>
-        </nav>
-    </div>
+  <div class="wrapper">
+    <nav>
+      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/todo">Todo</RouterLink>
+    </nav>
+  </div>
 </template>
 
 <style scoped>
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    /* max-width: 50%;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  /* max-width: 50%;
     flex: 0 0 50%; */
-    border-bottom: 2px solid rgb(72, 60, 60);
-  }
-  .wrapper img {
-    margin-right: 30px;
-  }
-  .wrapper nav {
-    display: flex;
-    justify-content: space-between;
-    width: 20vw;
-    align-items: center;
-    font-size: 2em;
-  }
+  border-bottom: 2px solid rgb(72, 60, 60);
+}
 
-  #app > header > div > nav a {
-    text-decoration: none;
-    color: black;
-    margin: auto 20px;
-  }
+.wrapper nav {
+  display: flex;
+  justify-content: space-between;
+  /* width: 30vw; */
+  align-items: center;
+  font-size: 2em;
+}
 
+#app>header>div>nav a {
+  text-decoration: none;
+  color: black;
+  margin: auto 20px;
+}
 </style>
