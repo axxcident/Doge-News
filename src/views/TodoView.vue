@@ -1,12 +1,12 @@
 <script setup>
-
 </script>
 
 <template>
   <!-- Todo list för eget Vue projekt. checked på input i vanliga fall-->
   <ul>
     <li>
-      <input type="checkbox" v-model="checkad" value="check1">
+      <!-- v-model="checkad" -->
+      <input type="checkbox" value="check1" v-bind:checked="isChecked" @change="getChecked">
       Webbanrop görs information från en eller flera webbtjänster visas i webbapplikationen (Undvik CORS-problem och
       använd helst HTTPS, för applikationen ska fungera bra som publicerad; Visa åtminstone tio värden; Använd inte
       Cities-tjänsten eller någon annan webbtjänst som har tagits upp som ett exempel)
@@ -14,7 +14,8 @@
       (10 olika id med information i varje)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check2">
+      <!-- v-model="checkad" -->
+      <input type="checkbox" value="check2" checked>
       Textinterpolering ({{ "och" }}) används
     </li>
     <li>
@@ -115,7 +116,20 @@
 export default {
   data() {
     return {
-      checkad: []
+      checkad: [],
+      checked: null
+    }
+  },
+  props: {
+    isChecked: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    getChecked() {
+      console.log("förändring")
+      this.isChecked = false
     }
   }
 }
