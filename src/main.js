@@ -14,12 +14,17 @@ const store = createStore({
     return {
       name: "",
       email: "",
-      user: {}
+      user: {},
+      // testa ha boolean som ändras när det finns en user.
+      testet: false
     }
   },
   mutations: {
     setUser(state, user) {
       state.user = user;
+    },
+    updateTestet() {
+      this.state.testet = !this.state.testet
     }
   },
   updateName(state, name) {
@@ -27,7 +32,7 @@ const store = createStore({
   },
   updateEmail(state, email) {
     state.email = email;
-  },
+  }
 })
 
 app.use(store)
