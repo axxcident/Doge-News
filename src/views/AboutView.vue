@@ -15,7 +15,8 @@ import { RouterLink } from 'vue-router'
       <label for="emalj">Email:</label>
       <input :name="email" type="text" v-model="$store.state.email">
       <!-- routerlänk med knapp -->
-      <RouterLink to="/"><button type="submit">Aktivera konto</button></RouterLink>
+      <button type="submit">Aktivera konto</button>
+      <!-- <RouterLink to="/"><button type="submit">Aktivera konto</button></RouterLink> -->
       <!-- <button onclick="http://localhost:5173" button type="submit">Aktivera konto</button> -->
     </form>
     <p> med $store å allt: {{ this.$store.state.name }} och {{ this.$store.state.email }} </p>
@@ -66,7 +67,8 @@ export default {
         email: this.email
       })
       this.$store.commit('updateTestet')
-      console.log(this.$store.state.testet)
+      this.$router.push('/')
+      // console.log(this.$store.state.testet)
       // uppdatera komponent.
       // this.$forceUpdate() denna gör ingenting
       // location.reload() denna rensar all data
