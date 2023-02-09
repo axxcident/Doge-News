@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 <template>
   <div class="wrapper">
     <nav>
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+      <img alt="Doge News" class="logo" src="../assets/Dogeboi.png" width="125" height="125" />
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/todo">Todo</RouterLink>
