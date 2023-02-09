@@ -2,12 +2,15 @@
 </script>
 
 <template>
-  <div class="behallare">
-    <div class="bildtitel">
-      <h4 class="titel"> {{ nyheter.title }} </h4>
-      <img v-bind:src="nyheter.urlToImage" alt="url till bild">
+  <div class="container nyhetsblock">
+    <div class="row">
+      <div class="bildtitel col">
+        <h4 class="titel"> {{ nyheter.title }} </h4>
+        <img v-bind:src="nyheter.urlToImage" alt="url till bild">
+      </div>
+      <p v-if="nyheter.content" class="innehall col"> {{ nyheter.content }} </p>
+      <p v-else class="innehall col"> {{ lorem }} </p>
     </div>
-    <p class="innehall"> {{ nyheter.content }} </p>
   </div>
 </template>
 
@@ -25,6 +28,7 @@ export default {
   data() {
     return {
       nyckeln: this.$store.state.API_KEY,
+      lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus id itaque tempora voluptatem quia reiciendis, delectus quam earum est nulla?"
     }
   },
   props: {
@@ -41,5 +45,23 @@ export default {
 .bildtitel img {
   width: 400px;
   height: 300px;
+}
+
+.titel {
+  font-family: var(--dogelogo);
+  margin: 35px auto;
+  line-height: 1.4em;
+}
+
+.innehall {
+  font-family: var(--teaxter);
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 1.4em;
+}
+
+.container {
+  margin-bottom: 40px;
 }
 </style>

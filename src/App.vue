@@ -6,21 +6,22 @@ import FooterBar from './components/FooterBar.vue'
 
 <template>
 
-<!-- Header & Navigation -->
-<header>
-  <NavigationBar />
-</header>
+  <!-- Header & Navigation -->
+  <header class="fixed-top bg-white">
+    <NavigationBar />
+  </header>
 
-<!-- main content per sida -->
-<RouterView />
+  <!-- main content per sida -->
+  <RouterView />
 
-<!-- Footer Navigation -->
-<FooterBar />
+  <!-- Footer Navigation -->
+  <FooterBar class="fixed-bottom bg-white" />
+
 
 </template>
 
 <style>
-  main {
-    height: 90vh;
-  }
+main {
+  height: 90vh;
+}
 </style>

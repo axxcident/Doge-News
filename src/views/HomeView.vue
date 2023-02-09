@@ -10,7 +10,7 @@ import News from '../components/News.vue';
     <h3>Bli medlem:</h3>
     <InputOutpout />
 
-    <h2>Nyheter</h2>
+    <h1 class="rubrik">Senaste Nytt</h1>
     <!-- <p>info: {{ output }} </p> -->
     <News />
 
@@ -37,16 +37,16 @@ export default {
         const nyckeln = this.nyckeln
         console.log(nyckeln)
         // .then(res => this.output = res.data.articles[0].title)
-  
+
         axios.get(`https://newsapi.org/v2/top-headlines?country=se&category=general&apiKey=${nyckeln}`)
           .then(res => console.log(res.data.articles))
-  
+
         // axios.get("https://avancera.app/cities/")
         //   .then(result => this.output = result.data[0].name)
       }
-  
+
     },
-  
+
     mounted() {
       this.newsFetch()
     } */
@@ -55,7 +55,14 @@ export default {
 </script>
 
 <style scoped>
-button {
-  padding: 8px;
+main {
+  margin-top: 20vh;
+}
+
+main .rubrik {
+  text-align: center;
+  margin-bottom: 3vh;
+  line-height: 1.3em;
+  font-family: var(--headline);
 }
 </style>

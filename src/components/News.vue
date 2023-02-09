@@ -4,7 +4,7 @@ import axios from 'axios'
 </script>
 
 <template>
-  <New class="news-wrapper" v-for="nyhet in news" :key="nyhet.index" :nyheter="nyhet" />
+  <New v-for="nyhet in news" :key="nyhet.index" :nyheter="nyhet" />
 </template>
 
 
@@ -44,8 +44,5 @@ export default {
 
 
 <style scoped>
-.news-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 </style>
