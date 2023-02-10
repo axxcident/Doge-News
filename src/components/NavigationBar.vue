@@ -13,6 +13,9 @@ import { RouterLink } from 'vue-router'
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/todo">Todo</RouterLink>
     </nav>
+    <div class="cta-member">
+      <RouterLink to="/member">Subscribe to Doge News</RouterLink>
+    </div>
   </div>
 </template>
 
@@ -24,32 +27,36 @@ import { RouterLink } from 'vue-router'
 }
 
 .hundkojan h2 {
-  /* line-height: 1.4em; */
   font-size: 2.8em;
   font-family: var(--dogelogo);
 }
 
 .navbar {
-  /* display: flex;
-  justify-content: center; */
   width: 100vw;
-  /*   // max-width: 50%;
-  // flex: 0 0 50%; */
   border-bottom: 2px solid rgb(72, 60, 60);
 }
 
-/* .lada .lankar { */
 .navbar .lankar {
   display: flex;
   justify-self: center;
-  /* justify-content: space-between; */
-  /* width: 30vw; */
   align-items: center;
   font-size: 2em;
-  margin-right: 39vw;
 }
 
 .navbar .lankar a {
+  text-decoration: none;
+  color: black;
+  margin: auto 20px;
+  font-family: var(--dogelogo);
+}
+
+.cta-member {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.cta-member a {
+  font-size: 1.7em;
   text-decoration: none;
   color: black;
   margin: auto 20px;

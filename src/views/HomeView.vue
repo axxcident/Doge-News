@@ -1,19 +1,20 @@
 <script setup>
-import InputOutpout from '../components/InputOutpout.vue';
+// import InputOutpout from '../components/InputOutpout.vue';
 // import axios from 'axios'
 import News from '../components/News.vue';
+import FooterBar from '../components/FooterBar.vue'
 </script>
 
 <template>
   <main>
-    <h1>Huvudsida</h1>
+    <!-- <h1>Huvudsida</h1>
     <h3>Bli medlem:</h3>
-    <InputOutpout />
+    <InputOutpout /> -->
 
     <h1 class="rubrik">Senaste Nytt</h1>
     <!-- <p>info: {{ output }} </p> -->
     <News />
-
+    <FooterBar class="bg-white" />
   </main>
 </template>
 

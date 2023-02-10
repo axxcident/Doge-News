@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 <template>
   <div class="footer">
     <nav>
-      <img alt="Doge News" class="logo" src="../assets/Dogeboi.png" width="100" height="100" />
+      <!-- <img alt="Doge News" class="logo" src="../assets/Dogeboi.png" width="100" height="100" /> -->
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/todo">Todo</RouterLink>
@@ -16,29 +16,26 @@ import { RouterLink } from 'vue-router'
 <style scoped>
 .footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 100vw;
-  /* max-width: 50%;
-    flex: 0 0 50%; */
+  position: block;
+  padding: 15px;
+  bottom: 0;
   border-top: 2px solid rgb(72, 60, 60);
 }
 
 .footer nav {
   display: flex;
-  justify-content: space-between;
-  /* width: 30vw; */
-  align-items: center;
-  font-size: 2em;
+  flex-direction: column;
 }
 
-#app>div>nav>a {
+.footer nav a {
+  font-size: 1.5em;
+  line-height: 2em;
+  font-family: var(--dogelogo);
   text-decoration: none;
   color: black;
   margin: auto 20px;
   width: fit-content;
 }
-
-/* #app > header > div > nav > a {
-
-  } */
 </style>
