@@ -13,27 +13,36 @@ app.use(router)
 const store = createStore({
   state() {
     return {
-      name: "",
-      email: "",
-      user: {},
+      user: {
+        name: localStorage.getItem("profilnamn") || "",
+        email: localStorage.getItem("profilemalj") || "",
+        exist: localStorage.getItem("profil") || false
+      },
       // testa ha boolean som ändras när det finns en user.
-      testet: false,
+      // testet: false,
       API_KEY: "879394147b4940aa9d8fad9b70a548fb"
     }
   },
   mutations: {
     setUser(state, user) {
       state.user = user;
-    },
-    updateTestet() {
-      this.state.testet = !this.state.testet
     }
+    // updateTestet() {
+    //   this.state.testet = !this.state.testet
+    // }
+  },
+  updateExistence(state) {
+    // state.user.exist = !state.user.exist;
+    state.user.exist = true;
+    // localStorage.setItem("profil", true)
   },
   updateName(state, name) {
-    state.name = name;
+    state.user.name = name;
+    // localStorage.setItem("profilnamn", name)
   },
   updateEmail(state, email) {
-    state.email = email;
+    state.user.email = email;
+    // localStorage.setItem("profilemalj", user)
   }
 })
 

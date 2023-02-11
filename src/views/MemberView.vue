@@ -6,18 +6,17 @@ import FooterBar from '../components/FooterBar.vue'
   <main>
     <div class="about">
       <h1>This is an about page</h1>
-      <p> Här ska databasen ligga {{ databasen }} </p>
     </div>
 
     <form class="wrapper" @submit.prevent="submitForm">
       <label for="namnet">Namn:</label>
-      <input :name="name" type="text" v-model="$store.state.name">
+      <input :name="name" type="text" v-model="$store.state.user.name">
       <label for="emalj">Email:</label>
-      <input :name="email" type="text" v-model="$store.state.email">
+      <input :name="email" type="text" v-model="$store.state.user.email">
       <!-- routerlänk med knapp -->
       <button type="submit">Aktivera konto</button>
     </form>
-    <p> med $store å allt: {{ this.$store.state.name }} och {{ this.$store.state.email }} </p>
+    <p> med $store å allt: {{ this.$store.state.user.name }} och {{ this.$store.state.user.email }} </p>
     <br>
     <p> med textinterpolering från data(): {{ name }} & {{ email }} </p>
     <FooterBar class="bg-white foten" />
@@ -27,34 +26,40 @@ import FooterBar from '../components/FooterBar.vue'
 
 <script>
 export default {
-  data() {
-    return {
-      testet: this.$store.state.testet,
-      databasen: null
-    }
-  },
-
-  mounted() {
-    this.dataHamtaren()
-  },
+  // data() {
+  //   return {
+  //     testet: this.$store.state.testet,
+  //   }
+  // },
 
   // Computed properties that are declared object literals.
   // Each property has a get & set function.
   computed: {
     name: {
       get() {
-        return this.$store.state.name;
+        return this.$store.state.user.name;
       },
       set(varde) {
-        this.updateName(varde);
+        // this.updateName(varde);
+        this.$store.commit("updateName", varde)
       }
     },
     email: {
       get() {
-        return this.$store.state.email;
+        return this.$store.state.user.email;
       },
       set(varde) {
-        this.updateEmail(varde);
+        // this.updateEmail(varde);
+        this.$store.commit("updateEmail", varde)
+      }
+    },
+    exist: {
+      get() {
+        return this.$store.state.user.exist;
+      },
+      set() {
+        // this.updateExistence()
+        this.$store.commit("updateExistence")
       }
     }
   },
@@ -63,15 +68,15 @@ export default {
     submitForm() {
       this.$store.commit('setUser', {
         name: this.name,
-        email: this.email
+        email: this.email,
+        // exist: !this.exist
+        exist: true
       })
-      this.$store.commit('updateTestet')
+      localStorage.setItem("profilnamn", this.name)
+      localStorage.setItem("profilemalj", this.email)
+      localStorage.setItem("profil", true)
+      // this.$store.commit('updateTestet')
       this.$router.push('/')
-    },
-    async dataHamtaren() {
-      const svaret = await fetch("DB.json");
-      const datan = await svaret.json()
-      this.databasen = await datan.databas;
     }
   }
 }
