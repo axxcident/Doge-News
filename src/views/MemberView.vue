@@ -6,6 +6,7 @@ import FooterBar from '../components/FooterBar.vue'
   <main>
     <div class="about">
       <h1>This is an about page</h1>
+      <p> Här ska databasen ligga {{ databasen }} </p>
     </div>
 
     <form class="wrapper" @submit.prevent="submitForm">
@@ -26,13 +27,19 @@ import FooterBar from '../components/FooterBar.vue'
 
 <script>
 export default {
-
   data() {
     return {
-      testet: this.$store.state.testet
+      testet: this.$store.state.testet,
+      databasen: null
     }
   },
 
+  mounted() {
+    this.dataHamtaren()
+  },
+
+  // Computed properties that are declared object literals.
+  // Each property has a get & set function.
   computed: {
     name: {
       get() {
@@ -51,6 +58,7 @@ export default {
       }
     }
   },
+
   methods: {
     submitForm() {
       this.$store.commit('setUser', {
@@ -59,6 +67,11 @@ export default {
       })
       this.$store.commit('updateTestet')
       this.$router.push('/')
+    },
+    async dataHamtaren() {
+      const svaret = await fetch("DB.json");
+      const datan = await svaret.json()
+      this.databasen = await datan.databas;
     }
   }
 }
