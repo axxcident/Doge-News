@@ -14,10 +14,23 @@ import { RouterLink } from 'vue-router'
       <RouterLink to="/todo">Todo</RouterLink>
     </nav>
     <div class="cta-member">
-      <RouterLink to="/member">Subscribe to Doge News</RouterLink>
+      <RouterLink v-if="this.$store.state.user.exist" to="/profile">
+        <img :src="hornbilden" alt="profilbilden" width="100" height="100">
+      </RouterLink>
+      <RouterLink v-else to="/member">Subscribe to Doge News</RouterLink>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      hornbilden: this.$store.state.user.profilbild
+    }
+  }
+}
+</script>
 
 <style scoped>
 .hundkojan {
@@ -61,5 +74,9 @@ import { RouterLink } from 'vue-router'
   color: black;
   margin: auto 20px;
   font-family: var(--dogelogo);
+}
+
+.cta-member a img {
+  border-radius: 50px;
 }
 </style>

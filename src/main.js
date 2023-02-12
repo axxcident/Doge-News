@@ -16,10 +16,10 @@ const store = createStore({
       user: {
         name: localStorage.getItem("profilnamn") || "",
         email: localStorage.getItem("profilemalj") || "",
-        exist: localStorage.getItem("profil") || false
+        password: localStorage.getItem("password") || "",
+        exist: localStorage.getItem("profil") || false,
+        profilbild: localStorage.getItem("profilbild") || ""
       },
-      // testa ha boolean som ändras när det finns en user.
-      // testet: false,
       API_KEY: "879394147b4940aa9d8fad9b70a548fb"
     }
   },
@@ -40,8 +40,16 @@ const store = createStore({
     state.user.name = name;
     // localStorage.setItem("profilnamn", name)
   },
+  updateName(state, password) {
+    state.user.password = password;
+    // localStorage.setItem("profilnamn", name)
+  },
   updateEmail(state, email) {
     state.user.email = email;
+    // localStorage.setItem("profilemalj", user)
+  },
+  updateBild(state, bild) {
+    state.user.profilbild = bild;
     // localStorage.setItem("profilemalj", user)
   }
 })
