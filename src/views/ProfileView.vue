@@ -9,9 +9,9 @@
         <p>Skriv ditt eget inlägg:</p>
         <form @submit.prevent="publiceraNyhet">
           <label for="title">Titel:</label>
-          <input type="text" v-model="posts.title">
+          <input type="text" v-model="title">
           <label for="inlagg">Inlägg</label>
-          <textarea v-model="posts.inlagg" cols="50" rows="10"></textarea>
+          <textarea v-model="inlagg" cols="50" rows="10"></textarea>
           <div class="bredknapp">
             <button class="pangknappen" type="submit">Publicera</button>
           </div>
@@ -39,26 +39,32 @@ export default {
         exist: this.$store.state.user.exist,
         profilbild: this.$store.state.user.profilbild
       },
-      posts: {
-        inlagg: "",
-        title: ""
-      }
+      inlagg: "",
+      title: ""
+      // posts: {
+      //   inlagg: "",
+      //   title: ""
+      // }
     }
   },
   emits: ['publicera-nyhet'],
   methods: {
     publiceraNyhet() {
-      this.$emit("publicera-nyhet", this.posts)
-      console.log("skickar data: ", this.posts.title, " och ", this.posts.inlagg)
-      this.$store.dispatch('createPost', this.posts);
+      // this.$emit("publicera-nyhet", this.posts)
+      console.log("skickar data: ", this.title, " och ", this.inlagg)
+      // this.$store.dispatch('createPost', this.posts);
+      this.$store.dispatch('createPost', {
+        inlagg: this.inlagg,
+        title: this.title
+      });
     }
   }
 }
 
 // {
-  // inlagg: this.inlagg,
-  // title: this.title
-  //  }
+// inlagg: this.inlagg,
+// title: this.title
+//  }
 
 </script>
 

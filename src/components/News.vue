@@ -11,22 +11,39 @@ import axios from 'axios'
         <img src="../assets/breakingnews.jpg" alt="url till bild">
       </div>
       <div class="col innehall">
-        <p v-if="post.content"> {{ post.content }} </p>
+        <p v-if="post.inlagg"> {{ post.inlagg }} </p>
         <p v-else> {{ lorem }} </p>
         <!-- <a v-bind:href="nyheter.url">Länk till artikel</a> -->
       </div>
     </div>
   </div>
+  <!-- <p v-if="posts.length !== 0"> {{ posts }} {{ typeof posts }} {{ posts.length !== 0 }} </p>
+  <div v-if="posts.length !== 0" class="container nyhetsblock">
+    <div class="row">
+      <div class="bildtitel col">
+        <h4 class="titel"> {{ posts[0].title }} </h4>
+        <img src="../assets/breakingnews.jpg" alt="url till bild">
+      </div>
+      <div class="col innehall">
+        <p v-if="posts[0].inlagg"> {{ posts[0].inlagg }} </p>
+        <p v-else> {{ lorem }} </p>
+        <a v-bind:href="nyheter.url">Länk till artikel</a>
+      </div>
+    </div>
+  </div> -->
   <New v-for="nyhet in news" :key="nyhet.index" :nyheter="nyhet" />
 </template>
-
 
 <script>
 export default {
   data() {
     return {
       nyckeln: this.$store.state.API_KEY,
-      posts: this.$store.state.posts || [],
+      posts: this.$store.state.posts,
+      // posts: {
+      //   title: this.$store.state.posts.title || [],
+      //   inlagg: this.$store.state.posts.inlagg || [],
+      // },
       news: [],
       lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus id itaque tempora voluptatem quia reiciendis, delectus quam earum est nulla?"
     }

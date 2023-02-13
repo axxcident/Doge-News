@@ -29,7 +29,12 @@ const store = createStore({
       state.user = user;
     },
     addPosts(state, post) {
-      state.posts.push(post);
+      state.posts.push(
+        {
+          title: post.title,
+          inlagg: post.inlagg
+        }
+      );
     }
   },
   actions: {

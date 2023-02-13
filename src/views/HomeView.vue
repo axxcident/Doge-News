@@ -18,7 +18,7 @@ export default {
     return {
       nyckeln: this.$store.state.API_KEY,
       output: null,
-      posts: this.$store.state.posts
+      // posts: this.$store.state.posts
     }
   },
 }
