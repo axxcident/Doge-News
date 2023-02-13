@@ -1,4 +1,5 @@
 <script setup>
+import FooterBar from '../components/FooterBar.vue'
 </script>
 
 <template>
@@ -108,6 +109,9 @@
       Det finns en Prettier-konfiguration för projektet, som alla filer följer
     </li>
   </ul>
+
+  <FooterBar class="bg-white" />
+
 </template>
 
 
@@ -141,8 +145,8 @@ export default {
 ul {
   max-width: 75vw;
   justify-content: center;
-  margin: auto;
-  height: fit-content;
+  margin: 15vh auto;
+  /* height: fit-content; */
 }
 
 ul>* {
