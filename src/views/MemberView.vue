@@ -17,15 +17,17 @@ import axios from 'axios'
         <div class="col forminput">
           <div class="skriv">
             <label for="namnet">Namn:</label>
-            <input :name="name" type="text" v-model="$store.state.user.name">
+            <!-- tar bort :name="name/email/password" och kollar vad som händer. på all <inputs> under-->
+            <!-- Kolla om "profilbilden" i data() också går att ta bort. -->
+            <input type="text" v-model="$store.state.user.name">
           </div>
           <div class="skriv">
             <label for="emalj">Email:</label>
-            <input :name="email" type="text" v-model="$store.state.user.email">
+            <input type="text" v-model="$store.state.user.email">
           </div>
           <div class="skriv">
             <label for="password">Lösenord:</label>
-            <input :name="password" type="password" v-model="$store.state.user.password">
+            <input type="password" v-model="$store.state.user.password">
           </div>
         </div>
         <!-- forminput -->

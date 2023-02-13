@@ -6,10 +6,14 @@
     <div class="row">
       <div class="bildtitel col">
         <h4 class="titel"> {{ nyheter.title }} </h4>
-        <img v-bind:src="nyheter.urlToImage" alt="url till bild">
+        <img v-if="nyheter.urlToImage" v-bind:src="nyheter.urlToImage" alt="url till bild">
+        <img v-else src="../assets/breakingnews.jpg" alt="url till bild">
       </div>
-      <p v-if="nyheter.content" class="innehall col"> {{ nyheter.content }} </p>
-      <p v-else class="innehall col"> {{ lorem }} </p>
+      <div class="col innehall">
+        <p v-if="nyheter.content"> {{ nyheter.content }} </p>
+        <p v-else> {{ lorem }} </p>
+        <a v-bind:href="nyheter.url">Länk till artikel</a>
+      </div>
     </div>
   </div>
 </template>
@@ -56,12 +60,18 @@ export default {
 .innehall {
   font-family: var(--teaxter);
   display: flex;
-  align-items: center;
+  justify-content: center;
   text-align: left;
   font-size: 1.4em;
+  flex-direction: column;
 }
 
-.container {
-  margin-bottom: 40px;
+.nyhetsblock {
+  margin: 7vh auto 7vh;
 }
+
+
+/* .container {
+  margin-bottom: 40px;
+} */
 </style>

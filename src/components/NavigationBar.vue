@@ -14,6 +14,7 @@ import { RouterLink } from 'vue-router'
       <RouterLink to="/todo">Todo</RouterLink>
     </nav>
     <div class="cta-member">
+      <!--  @publicera-nyhet="taEmotNyhet" -->
       <RouterLink v-if="this.$store.state.user.exist" to="/profile">
         <img :src="hornbilden" alt="profilbilden" width="100" height="100">
       </RouterLink>
@@ -26,9 +27,18 @@ import { RouterLink } from 'vue-router'
 export default {
   data() {
     return {
-      hornbilden: this.$store.state.user.profilbild
+      hornbilden: this.$store.state.user.profilbild,
     }
-  }
+  },
+
+
+  // methods: {
+  //   taEmotNyhet(senasteNytt) {
+  //     this.$store.dispatch('createPost', senasteNytt);
+  //     // this.nyhetsData = senasteNytt
+  //     console.log("Vi tog emot: ", senasteNytt)
+  //   }
+  // }
 }
 </script>
 

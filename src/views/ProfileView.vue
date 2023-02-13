@@ -7,7 +7,15 @@
       <div class="col">
         <h2>Välkommen till hundkojan</h2>
         <p>Skriv ditt eget inlägg:</p>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <form @submit.prevent="publiceraNyhet">
+          <label for="title">Titel:</label>
+          <input type="text" v-model="posts.title">
+          <label for="inlagg">Inlägg</label>
+          <textarea v-model="posts.inlagg" cols="50" rows="10"></textarea>
+          <div class="bredknapp">
+            <button class="pangknappen" type="submit">Publicera</button>
+          </div>
+        </form>
       </div>
       <div class="col">
         <p> {{ this.$store.state.user.name }} </p>
@@ -30,17 +38,28 @@ export default {
         password: this.$store.state.user.password,
         exist: this.$store.state.user.exist,
         profilbild: this.$store.state.user.profilbild
+      },
+      posts: {
+        inlagg: "",
+        title: ""
       }
-      // user: {
-      //   name: localStorage.getItem("profilnamn"),
-      //   email: localStorage.getItem("profilemalj"),
-      //   password: localStorage.getItem("password"),
-      //   exist: this.$store.state.user.exist,
-      //   profilbild: localStorage.getItem("profilbild") || ""
-      // }
+    }
+  },
+  emits: ['publicera-nyhet'],
+  methods: {
+    publiceraNyhet() {
+      this.$emit("publicera-nyhet", this.posts)
+      console.log("skickar data: ", this.posts.title, " och ", this.posts.inlagg)
+      this.$store.dispatch('createPost', this.posts);
     }
   }
 }
+
+// {
+  // inlagg: this.inlagg,
+  // title: this.title
+  //  }
+
 </script>
 
 <style>

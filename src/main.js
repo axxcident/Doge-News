@@ -20,16 +20,22 @@ const store = createStore({
         exist: localStorage.getItem("profil") || false,
         profilbild: localStorage.getItem("profilbild") || ""
       },
-      API_KEY: "879394147b4940aa9d8fad9b70a548fb"
+      API_KEY: "879394147b4940aa9d8fad9b70a548fb",
+      posts: []
     }
   },
   mutations: {
     setUser(state, user) {
       state.user = user;
+    },
+    addPosts(state, post) {
+      state.posts.push(post);
     }
-    // updateTestet() {
-    //   this.state.testet = !this.state.testet
-    // }
+  },
+  actions: {
+    createPost({ commit }, post) {
+      commit('addPosts', post)
+    },
   },
   updateExistence(state) {
     // state.user.exist = !state.user.exist;
