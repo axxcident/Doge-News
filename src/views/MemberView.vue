@@ -17,8 +17,6 @@ import axios from 'axios'
         <div class="col forminput">
           <div class="skriv">
             <label for="namnet">Namn:</label>
-            <!-- tar bort :name="name/email/password" och kollar vad som händer. på all <inputs> under-->
-            <!-- Kolla om "profilbilden" i data() också går att ta bort. -->
             <input type="text" v-model="$store.state.user.name">
           </div>
           <div class="skriv">
@@ -140,22 +138,6 @@ export default {
             this.profilbilden = res.data.url
           }
         })
-      // .then(res => this.profilbilden = res.data.url)
-      // console.log(res.data.url)
-      // this.news = res.data.articles)
-
-      // fetch('https://random.dog/woof.json')
-      //   .then(dogResponse => dogResponse.json())
-      //   .then(dogResult => {
-      //     console.log("Är gif: " + !dogResult.url.includes("jpg"))
-      //     if (dogResult.url.includes("gif") || dogResult.url.includes("mp4")) {
-      //       getDog()
-      //     } else {
-      //       sessionStorage.setItem('dogpicture', JSON.stringify(dogResult.url));
-      //       console.log("Är bild: " + dogResult.url.includes("jpg"))
-      //     }
-      //   })
-
     }
   }
 }

@@ -78,36 +78,37 @@ import FooterBar from '../components/FooterBar.vue'
       Minst en bevakare (watch) används
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check17">
+      <input type="checkbox" v-model="checkad" value="check17" @click="onClick()">
       Alla props ska vara typsäkra (Man bestämmer vilken typ det är, ”type: number” osv)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check18">
+      <input type="checkbox" v-model="checkad" value="check18" @click="onClick()">
       Minst ett custom event används (skickas och tas emot)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check19">
+      <input type="checkbox" v-model="checkad" value="check19" @click="onClick()">
       Vuex körs i “strict mode”, och minst ett datavärde sparas i, uppdateras (via en mutation), och hämtas från, Vuex
       alternativt att man använder dess motsvarighet som finns i Vue s egna nedladdning ”pinia”
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check20">
+      <input type="checkbox" v-model="checkad" value="check20" @click="onClick()">
       Använd minst ett Vue Router-adressparametervärde
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check21">
+      <input type="checkbox" v-model="checkad" value="check21" @click="onClick()">
       Bootstrap ska användas i någon utsträckning
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check22">
+      <input type="checkbox" v-model="checkad" value="check22" @click="onClick()">
       Det finns en ESLint-konfiguration för projektet, som alla filer följer
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check23">
+      <input type="checkbox" v-model="checkad" value="check23" @click="onClick()">
       Det finns en Prettier-konfiguration för projektet, som alla filer följer
     </li>
   </ul>
 
+  <!-- @checkmark-incremented="onCheckmarkIncremented" -->
   <FooterBar class="bg-white" />
 
 </template>
@@ -118,7 +119,12 @@ export default {
     return {
       checkad: ["check1", "check2", "check3", "check4", "check5", "check6", "check7", "check8", "check9", "check10", "check11", "check12", "check13", "check14", "check15", "check17", "check20", "check21", "check22",],
     }
-  }
+  },
+  // methods: {
+  //   onClick() {
+  //     this.$emit('checkmark-incremented', this.checkad.length)
+  //   }
+  // }
 }
 </script>
 
@@ -126,7 +132,7 @@ export default {
 ul {
   max-width: 75vw;
   justify-content: center;
-  margin: 15vh auto;
+  margin: 15vh auto 4vh;
 }
 
 ul>* {

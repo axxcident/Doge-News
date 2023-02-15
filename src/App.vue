@@ -14,10 +14,19 @@ import NavigationBar from './components/NavigationBar.vue'
     <!-- main content per sida -->
     <RouterView />
 
-    <!-- Footer Navigation bs fixed-bottom -->
-    <!-- <FooterBar class="bg-white" /> -->
+    <!-- Footer Navigation bg-fixed-bottom -->
   </main>
 </template>
+
+<!-- <script>
+export default {
+  methods: {
+    onCheckmarkIncremented(kravnummer) {
+      console.log(`Värdet har ökat till ${kravnummer}!`)
+    }
+  }
+}
+</script> -->
 
 <style>
 main {
