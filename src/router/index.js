@@ -33,6 +33,12 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: () => import('../views/ProfileView.vue')
+    },
+    {
+      path: '/nyhet/:page',
+      name: 'nyhetsfokus',
+      component: () => import('../views/NyhetsFocus.vue'),
+      props: true
     }
   ]
 })

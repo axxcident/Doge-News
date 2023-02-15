@@ -3,11 +3,10 @@ import FooterBar from '../components/FooterBar.vue'
 </script>
 
 <template>
-  <!-- Todo list för eget Vue projekt. checked på input i vanliga fall-->
+  <!-- Todo list för eget Vue projekt -->
   <ul>
     <li>
-      <!-- v-model="checkad" -->
-      <input type="checkbox" value="check1" v-bind:checked="isChecked" @change="getChecked">
+      <input type="checkbox" value="check1" v-model="checkad">
       Webbanrop görs information från en eller flera webbtjänster visas i webbapplikationen (Undvik CORS-problem och
       använd helst HTTPS, för applikationen ska fungera bra som publicerad; Visa åtminstone tio värden; Använd inte
       Cities-tjänsten eller någon annan webbtjänst som har tagits upp som ett exempel)
@@ -15,8 +14,7 @@ import FooterBar from '../components/FooterBar.vue'
       (10 olika id med information i varje)
     </li>
     <li>
-      <!-- v-model="checkad" -->
-      <input type="checkbox" value="check2" checked>
+      <input type="checkbox" value="check2" v-model="checkad">
       Textinterpolering ({{ "och" }}) används
     </li>
     <li>
@@ -114,39 +112,21 @@ import FooterBar from '../components/FooterBar.vue'
 
 </template>
 
-
 <script>
-
 export default {
   data() {
     return {
-      checkad: [],
-      checked: null
-    }
-  },
-  props: {
-    isChecked: {
-      type: Boolean,
-      default: true
-    }
-  },
-  methods: {
-    getChecked() {
-      console.log("förändring")
-      this.isChecked = false
+      checkad: ["check1", "check2", "check3", "check4", "check5", "check6", "check7", "check8", "check9", "check10", "check11", "check12", "check13", "check14", "check15", "check17", "check20", "check21", "check22",],
     }
   }
 }
-
 </script>
-
 
 <style scoped>
 ul {
   max-width: 75vw;
   justify-content: center;
   margin: 15vh auto;
-  /* height: fit-content; */
 }
 
 ul>* {

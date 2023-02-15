@@ -12,17 +12,16 @@
       <div class="col innehall">
         <p v-if="nyheter.content"> {{ nyheter.content }} </p>
         <p v-else> {{ lorem }} </p>
-        <a v-bind:href="nyheter.url">Länk till artikel</a>
+        <button @click="newPage">Läs mer</button>
+        <a v-bind:href="nyheter.url" target="_blank">Länk till artikel</a>
       </div>
     </div>
   </div>
 </template>
 
 
-<!-- <h4 class="titel"> (första) titeln ligger på res.data.articles[0].title </h4> -->
-<!-- url till bild res.data.articles[0].urlToImage -->
-<!-- <p class="innehall"> (första) innehållet ligger på res.data.articles[0].content </p> -->
-<!-- <a href="">länk till artikel res.data.articles[0].url</a> -->
+<!-- HALLÅ RICHARD. Om du ser detta. Jag skulle haft en sida till med allt textinnehåll från själva nyhetsartiklarna
+     som jag hade tänkt skrapa fram.. Men det är omöjligt att skrapa, ens komma åt dem pga CORS -->
 
 <!-- Hela artikeln content:
   https://newsapi.org/docs/guides/how-to-get-the-full-content-for-a-news-article -->
@@ -39,6 +38,16 @@ export default {
     nyheter: {
       required: true,
       type: Object
+    },
+    index: {
+      required: true,
+      type: Number
+    }
+  },
+  methods: {
+    newPage() {
+      // console.log(this.index)
+      this.$router.push(`/nyhet/:${this.index}`)
     }
   }
 }

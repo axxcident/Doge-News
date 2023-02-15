@@ -21,7 +21,8 @@ const store = createStore({
         profilbild: localStorage.getItem("profilbild") || ""
       },
       API_KEY: "879394147b4940aa9d8fad9b70a548fb",
-      posts: []
+      posts: [],
+      searchCategory: "business"
     }
   },
   mutations: {
