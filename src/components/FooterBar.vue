@@ -8,7 +8,7 @@ import { RouterLink } from 'vue-router'
       <!-- <img alt="Doge News" class="logo" src="../assets/Dogeboi.png" width="100" height="100" /> -->
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/todo">Todo</RouterLink>
+      <RouterLink to="/todochart">Todo</RouterLink>
     </nav>
   </div>
 </template>

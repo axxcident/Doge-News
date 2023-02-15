@@ -1,12 +1,8 @@
-<script setup>
-import FooterBar from '../components/FooterBar.vue'
-</script>
-
 <template>
   <!-- Todo list för eget Vue projekt -->
   <ul>
     <li>
-      <input type="checkbox" value="check1" v-model="checkad">
+      <input type="checkbox" value="check1" v-model="checkad" @click="onClick()">
       Webbanrop görs information från en eller flera webbtjänster visas i webbapplikationen (Undvik CORS-problem och
       använd helst HTTPS, för applikationen ska fungera bra som publicerad; Visa åtminstone tio värden; Använd inte
       Cities-tjänsten eller någon annan webbtjänst som har tagits upp som ett exempel)
@@ -14,67 +10,67 @@ import FooterBar from '../components/FooterBar.vue'
       (10 olika id med information i varje)
     </li>
     <li>
-      <input type="checkbox" value="check2" v-model="checkad">
+      <input type="checkbox" value="check2" v-model="checkad" @click="onClick()">
       Textinterpolering ({{ "och" }}) används
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check3">
+      <input type="checkbox" v-model="checkad" value="check3" @click="onClick()">
       Attributinterpolering (v-bind eller dess kortform) används (key-props (relaterade till v-for) räknas inte)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check4">
+      <input type="checkbox" v-model="checkad" value="check4" @click="onClick()">
       Villkorlig rendering (v-if) används
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check5">
+      <input type="checkbox" v-model="checkad" value="check5" @click="onClick()">
       Listrendering (v-for) används
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check6">
+      <input type="checkbox" v-model="checkad" value="check6" @click="onClick()">
       Händelser (v-on eller dess kortform) används
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check7">
+      <input type="checkbox" v-model="checkad" value="check7" @click="onClick()">
       v-model (och värdet som matas in) används
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check8">
+      <input type="checkbox" v-model="checkad" value="check8" @click="onClick()">
       En Single Page Application, bestående av minst två webbsidor, ska skapas med Vue Router (Använd både router-link
       och router-view)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check9">
+      <input type="checkbox" v-model="checkad" value="check9" @click="onClick()">
       Minst en icke-Vue-Router-.vue-komponent ska skapas (App.vue räknas inte)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check10">
+      <input type="checkbox" v-model="checkad" value="check10" @click="onClick()">
       Minst en komponent ska ta emot, och använda, minst en prop (via props-nyckeln)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check11">
+      <input type="checkbox" v-model="checkad" value="check11" @click="onClick()">
       Källkoden för projektet publiceras på GitHub (eller liknande)
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check12">
+      <input type="checkbox" v-model="checkad" value="check12" @click="onClick()">
       Inlämningen ska ske på ithsdistans med en länk till ert projekt
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check13">
+      <input type="checkbox" v-model="checkad" value="check13" @click="onClick()">
       Ska kunna laddas ned och kunna köras på vilken dator som helst med npm install
     </li>
     <li>
       <b>För VG ska kraven för G vara uppfyllda. Dessutom ska följande krav uppfyllas:</b>
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check14">
+      <input type="checkbox" v-model="checkad" value="check14" @click="onClick()">
       Använd någonting annat än fetch (till exempel Axios) för att göra webbanropen
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check15">
+      <input type="checkbox" v-model="checkad" value="check15" @click="onClick()">
       Minst en beräknad egenskap (computed) används
     </li>
     <li>
-      <input type="checkbox" v-model="checkad" value="check16">
+      <input type="checkbox" v-model="checkad" value="check16" @click="onClick()">
       Minst en bevakare (watch) används
     </li>
     <li>
@@ -108,15 +104,18 @@ import FooterBar from '../components/FooterBar.vue'
     </li>
   </ul>
 
-  <FooterBar class="bg-white" />
-
 </template>
 
 <script>
 export default {
   data() {
     return {
-      checkad: ["check1", "check2", "check3", "check4", "check5", "check6", "check7", "check8", "check9", "check10", "check11", "check12", "check13", "check14", "check15", "check17", "check20", "check21", "check22",],
+      checkad: ["check1", "check2", "check3", "check4", "check5", "check6", "check7", "check8", "check9", "check10", "check11", "check12", "check13", "check14", "check15", "check16", "check17", "check18", "check20", "check21", "check22",],
+    }
+  },
+  methods: {
+    onClick() {
+      this.$emit('checkmark-incremented', this.checkad.length)
     }
   }
 }
@@ -126,7 +125,7 @@ export default {
 ul {
   max-width: 75vw;
   justify-content: center;
-  margin: 15vh auto 4vh;
+  margin: 10vh auto 4vh;
 }
 
 ul>* {

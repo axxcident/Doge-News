@@ -11,7 +11,7 @@ import { RouterLink } from 'vue-router'
     <nav class="lankar">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/todo">Todo</RouterLink>
+      <RouterLink to="/todochart">Todo</RouterLink>
     </nav>
     <div class="cta-member">
       <!--  @publicera-nyhet="taEmotNyhet" -->
@@ -29,16 +29,7 @@ export default {
     return {
       hornbilden: this.$store.state.user.profilbild,
     }
-  },
-
-
-  // methods: {
-  //   taEmotNyhet(senasteNytt) {
-  //     this.$store.dispatch('createPost', senasteNytt);
-  //     // this.nyhetsData = senasteNytt
-  //     console.log("Vi tog emot: ", senasteNytt)
-  //   }
-  // }
+  }
 }
 </script>
 

@@ -18,16 +18,6 @@ import NavigationBar from './components/NavigationBar.vue'
   </main>
 </template>
 
-<!-- <script>
-export default {
-  methods: {
-    onCheckmarkIncremented(kravnummer) {
-      console.log(`Värdet har ökat till ${kravnummer}!`)
-    }
-  }
-}
-</script> -->
-
 <style>
 main {
   height: auto;

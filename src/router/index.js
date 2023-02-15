@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
+import TodoChartView from '../views/TodoChartView.vue'
 
 
 const router = createRouter({
@@ -17,16 +18,16 @@ const router = createRouter({
       component: AboutView
     },
     {
-      path: '/todo',
-      name: 'todo',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/TodoView.vue')
+      path: '/todochart',
+      name: 'todochart',
+      component: TodoChartView
     },
     {
       path: '/member',
       name: 'member',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
       component: () => import('../views/MemberView.vue')
     },
     {
