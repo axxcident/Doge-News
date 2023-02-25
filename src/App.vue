@@ -1,4 +1,14 @@
-<script setup>
+<script>
+export default {
+  beforeCreate() {
+    // make the store available as a property on this.$store
+    this.$store = this.$options.store;
+  },
+  components: {
+    NavigationBar,
+    RouterView,
+  },
+};
 import { RouterView } from 'vue-router'
 import NavigationBar from './components/NavigationBar.vue'
 // import FooterBar from './components/FooterBar.vue'
